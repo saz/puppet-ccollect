@@ -1,0 +1,19 @@
+# As we exclude all at the end, we have to include every directory before the
+# one we like to backup. For example: we will backup /home/nagios. We have to
+# add /home AND /home/nagios/***
+# The three *** at the end means: backup directory and anything in it.
++ /home
++ /home/nagios/***
++ /etc/***
++ /root/***
++ /srv/***
++ /usr
++ /usr/local/***
++ /var
++ /var/lib
++ /var/lib/sequenced/***
++ /var/lib/statcountd/***
++ /var/spool
++ /var/spool/cron/***
++ /var/www/***
+- *
