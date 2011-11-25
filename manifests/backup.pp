@@ -1,4 +1,4 @@
-define ccollect::backup($ensure = present, $ssh_user = 'root', $source = '/', $exclude = undef, $rsync_options = '', $delete_incomplete = 'y', $pre_exec = undef, $post_exec = undef) {
+define ccollect::backup($ensure = present, $source_host, $ssh_user = 'root', $source = '/', $exclude = undef, $rsync_options = '', $delete_incomplete = 'y', $pre_exec = undef, $post_exec = undef) {
     $local_config_base = "${ccollect::params::config_dir}sources/${name}/"
     $local_backup_dest = "${ccollect::params::backup_dir}${name}/"
 
@@ -20,7 +20,7 @@ define ccollect::backup($ensure = present, $ssh_user = 'root', $source = '/', $e
         ensure  => $ensure,
         owner   => root,
         group   => root,
-        content => "${ssh_user}@${fqdn}:${source}",
+        content => "${ssh_user}@${source_host}:${source}",
         require => File[$local_config_base],
     }
 

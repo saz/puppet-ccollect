@@ -19,6 +19,7 @@ Manage ccollect via Puppet
 ### Source node(s)
 ```
     @@ccollect::backup {
+        source_host       => $fqdn,
         ssh_user          => root,
         source            => '/',
         exclude           => 'puppet:///files/another/exclude/file',
@@ -28,6 +29,10 @@ Manage ccollect via Puppet
         post_exec         => 'puppet:///files/path/to/post/exec/script',
     }
 ```
+
+* source_host:
+    Host to connect to, most of the time this should be set to $fqdn.
+    **Required**
 
 * ssh_user:
     User to connect as to remote host
