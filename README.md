@@ -21,7 +21,6 @@ Manage ccollect via Puppet
     @@ccollect::backup {
         ssh_user          => root,
         source            => '/',
-        destination       => $fqdn,
         exclude           => 'puppet:///files/another/exclude/file',
         rsync_options     => '',
         delete_incomplete => 'y',
@@ -37,10 +36,6 @@ Manage ccollect via Puppet
 * source:
     Start position of rsync
     **Default:** /
-
-* destination:
-    Backup destination, relative to 'backup_dir' (e.g '/var/lib/backup/host.example.com/')
-    **Default:** $fqdn
 
 * exclude:
     Exclude list to use
