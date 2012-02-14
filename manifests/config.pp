@@ -19,6 +19,7 @@ class ccollect::config {
     group   => 'root',
     mode    => '0755',
     require => Class['ccollect::install'],
+  }
 
   file { $ccollect::params::backup_dir:
     ensure => directory,
