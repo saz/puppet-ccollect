@@ -21,13 +21,13 @@ class ccollect::config {
     require => Class['ccollect::install'],
   }
 
-  file { "${ccollect::params::config_dir}sources/destination":
+  file { "${ccollect::params::config_dir}defaults/sources/destination":
     ensure  => file,
     owner   => 0,
     group   => 0,
     mode    => '0644',
     content => "${ccollect::backup_dir}\n",
-    require => File["${ccollect::params::config_dir}sources"],
+    require => File["${ccollect::params::config_dir}"],
   }
 
   file { $ccollect::params::backup_dir:
