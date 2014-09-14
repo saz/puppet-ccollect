@@ -1,5 +1,5 @@
 name    'saz-ccollect'
-version '1.0.3'
+version '1.1.0'
 source 'UNKNOWN'
 author 'saz'
 license 'Apache License, Version 2.0'
