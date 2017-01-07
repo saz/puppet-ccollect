@@ -6,7 +6,7 @@ class ccollect::config {
     force   => true,
     owner   => root,
     group   => root,
-    source  => "puppet:///modules/ccollect/config",
+    source  => 'puppet:///modules/ccollect/config',
     require => Class['ccollect::install'],
   }
 
@@ -27,13 +27,13 @@ class ccollect::config {
     group   => 0,
     mode    => '0644',
     content => "${ccollect::backup_dir}\n",
-    require => File["${ccollect::params::config_dir}"],
+    require => File[$ccollect::params::config_dir],
   }
 
   file { $ccollect::params::backup_dir:
-    ensure => directory,
-    owner  => root,
-    group  => root,
+    ensure  => directory,
+    owner   => root,
+    group   => root,
     require => Class['ccollect::install'],
   }
 }

@@ -1,1 +1,1 @@
-include ccollect
+include ::ccollect

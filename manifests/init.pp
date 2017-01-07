@@ -25,6 +25,10 @@
 #
 #
 # [Remember: No empty lines between comments and class definition]
-class ccollect($backup_dir = '/var/lib/backups/') {
-    include ccollect::params, ccollect::install, ccollect::config
+class ccollect(
+  $backup_dir = '/var/lib/backups/'
+) {
+  include ::ccollect::params
+  include ::ccollect::install
+  include ::ccollect::config
 }
