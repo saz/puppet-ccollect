@@ -1,0 +1,21 @@
+{
+  "name": "saz-ccollect",
+  "version": "1.1.0",
+  "author": "saz",
+  "summary": "Manage ccollect",
+  "license": "Apache-2.0",
+  "source": "https://github.com/saz/puppet-ccollect.git",
+  "project_page": "https://github.com/saz/puppet-ccollect",
+  "issues_url": "https://github.com/saz/puppet-ccollect/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian"
+    },
+    {
+      "operatingsystem": "Ubuntu"
+    }
+  ],
+  "description": "Manage ccollect client and server via Puppet",
+  "dependencies": [
+  ]
+}
