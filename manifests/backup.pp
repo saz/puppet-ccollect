@@ -74,6 +74,7 @@ define ccollect::backup(
             ensure  => $ensure,
             owner   => root,
             group   => root,
+            mode    => '0755',
             source  => $pre_exec,
             require => File[$local_config_base],
         }
@@ -84,6 +85,7 @@ define ccollect::backup(
             ensure  => $ensure,
             owner   => root,
             group   => root,
+            mode    => '0755',
             source  => $post_exec,
             require => File[$local_config_base],
         }
