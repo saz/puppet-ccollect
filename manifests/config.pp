@@ -6,6 +6,7 @@ class ccollect::config {
     force   => true,
     owner   => root,
     group   => root,
+    ignore  => '*.lock',
     source  => 'puppet:///modules/ccollect/config',
     require => Class['ccollect::install'],
   }
