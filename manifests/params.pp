@@ -4,13 +4,13 @@ class ccollect::params {
     default: { $backup_dir = $ccollect::backup_dir }
   }
 
-  case $::osfamily {
+  case $facts['os']['family'] {
     'Debian': {
       $package_name = 'ccollect'
       $config_dir = '/etc/ccollect/'
     }
     default: {
-      fail("Unsupported platform: ${::osfamily}")
+      fail("Unsupported platform: ${facts['os']['family']}")
     }
   }
 }
